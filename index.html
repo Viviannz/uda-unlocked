@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding the New NHS Contract — AI Chat Agent | AI4This × Dental Amplify</title>
+  <meta name="description" content="Ask anything about the new NHS Dentistry Quality & Payment Reforms contract. Get instant, clear answers from an AI chat agent — built for dental associates." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1B2A6B;
+      --navy-dark: #111D50;
+      --navy-mid:  #253580;
+      --gold:      #C8A84B;
+      --gold-light:#E8C96A;
+      --white:     #FFFFFF;
+      --off-white: #F7F8FC;
+      --light-grey:#EDF0F8;
+      --mid-grey:  #8892A4;
+      --text:      #1A1A2E;
+      --radius:    12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── Top Banner ────────────────────────────────────────────── */
+    .top-banner {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      padding: 8px 20px;
+    }
+    .top-banner strong { color: var(--gold-light); }
+
+    /* ─── Nav ───────────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: var(--white);
+      border-bottom: 1px solid var(--light-grey);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brands {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .brand-pill .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .brand-divider {
+      width: 1px; height: 20px;
+      background: var(--light-grey);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--mid-grey);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--navy-mid); }
+
+    /* ─── Hero ──────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 60%, #2E4499 100%);
+      padding: 80px 40px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(200,168,75,0.08) 0%, transparent 70%);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge .pulse-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4ADE80;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      position: relative;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.72);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+      position: relative;
+    }
+
+    /* ─── Timer Badge ───────────────────────────────────────────── */
+    .timer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 40px;
+      padding: 10px 22px;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .timer-display {
+      font-family: 'Inter', monospace;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      min-width: 48px;
+    }
+
+    .timer-label {
+      font-size: 0.78rem;
+      opacity: 0.7;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Agent Embed Zone ──────────────────────────────────────── */
+    .agent-zone {
+      background: var(--off-white);
+      padding: 56px 40px;
+      position: relative;
+    }
+
+    .agent-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .agent-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .agent-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .agent-header p {
+      font-size: 0.95rem;
+      color: var(--mid-grey);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ElevenLabs widget wrapper */
+    .widget-wrapper {
+      background: var(--white);
+      border: 1px solid var(--light-grey);
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 4px 30px rgba(27,42,107,0.07);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+
+    /* Placeholder shown until real widget is configured */
+    .widget-placeholder {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .mic-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 8px 24px rgba(27,42,107,0.25);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .mic-icon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(27,42,107,0.35);
+    }
+    .mic-icon svg { width: 32px; height: 32px; fill: white; }
+
+    .widget-placeholder h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .widget-placeholder p {
+      font-size: 0.88rem;
+      color: var(--mid-grey);
+      max-width: 380px;
+    }
+
+    /* ─── Sample Questions ──────────────────────────────────────── */
+    .sample-qs {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .sample-q {
+      background: var(--white);
+      border: 1px solid var(--light-grey);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.84rem;
+      color: var(--navy);
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .sample-q:hover {
+      border-color: var(--navy);
+      box-shadow: 0 2px 12px rgba(27,42,107,0.08);
+    }
+    .sample-q .q-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ─── Paywall Overlay ───────────────────────────────────────── */
+    #paywall-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(17,29,80,0.85);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    #paywall-overlay.active { display: flex; }
+
+    .paywall-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+    }
+
+    .paywall-icon {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+    }
+
+    .paywall-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .paywall-card p {
+      font-size: 0.9rem;
+      color: var(--mid-grey);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .price-tag {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--off-white);
+      border: 2px solid var(--light-grey);
+      border-radius: 14px;
+      padding: 20px 32px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .price-amount {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .price-period {
+      font-size: 0.82rem;
+      color: var(--mid-grey);
+      margin-top: 4px;
+    }
+
+    .price-bullets {
+      list-style: none;
+      text-align: left;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .price-bullets li {
+      font-size: 0.88rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .price-bullets li::before {
+      content: '✓';
+      font-weight: 700;
+      color: #22C55E;
+      font-size: 0.9rem;
+    }
+
+    .pay-btn {
+      display: block;
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .pay-btn:hover { background: var(--navy-mid); }
+
+    .stripe-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.76rem;
+      color: var(--mid-grey);
+    }
+
+    /* ─── How It Works ──────────────────────────────────────────── */
+    .how-it-works {
+      padding: 72px 40px;
+      background: var(--white);
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      font-weight: 500;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: var(--radius);
+      background: var(--off-white);
+      border: 1px solid var(--light-grey);
+      transition: box-shadow 0.2s;
+    }
+    .step-card:hover { box-shadow: 0 6px 24px rgba(27,42,107,0.07); }
+
+    .step-num {
+      width: 44px; height: 44px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 auto 16px;
+    }
+
+    .step-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 0.85rem;
+      color: var(--mid-grey);
+      line-height: 1.6;
+    }
+
+    /* ─── Topics Covered ────────────────────────────────────────── */
+    .topics {
+      background: var(--navy-dark);
+      padding: 72px 40px;
+      color: var(--white);
+    }
+
+    .topics .section-title { color: var(--white); }
+
+    .topics-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .topic-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .topic-chip .chip-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── About / Footer ────────────────────────────────────────── */
+    .about {
+      background: var(--off-white);
+      padding: 64px 40px;
+    }
+
+    .about-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .about-inner { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    .about-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      color: white;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+    }
+
+    .about-text h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .about-text .role {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+      color: var(--mid-grey);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #0A66C2;
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .linkedin-link:hover { background: #004182; }
+
+    /* ─── Privacy + Attribution ─────────────────────────────────── */
+    .legal-strip {
+      background: var(--navy-dark);
+      padding: 36px 40px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.76rem;
+      line-height: 1.7;
+    }
+
+    .legal-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 640px) { .legal-inner { grid-template-columns: 1fr; } }
+
+    .legal-strip h4 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .legal-strip a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brands {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+    .footer-brand:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-copy {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ─── Timer States ──────────────────────────────────────────── */
+    .timer-warning { color: #FCA5A5 !important; }
+    .timer-ok      { color: var(--gold-light); }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      nav { padding: 14px 20px; }
+      .hero { padding: 56px 24px 52px; }
+      .agent-zone, .how-it-works, .topics, .about { padding: 48px 24px; }
+      .legal-strip { padding: 28px 24px; }
+      footer { padding: 20px 24px; }
+      .paywall-card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Banner ─────────────────────────────────────── -->
+<div class="top-banner">
+  New NHS dentistry contract — <strong>15 minutes free</strong>, then unlock full access for just £9.99
+</div>
+
+<!-- ── Navigation ─────────────────────────────────────── -->
+<nav>
+  <div class="nav-brands">
+    <a href="https://ai4this.com" class="brand-pill" target="_blank" rel="noopener">
+      <span class="dot"></span> AI4THIS
+    </a>
+    <div class="brand-divider"></div>
+    <a href="https://ai4this.com/DentalAmplify" class="brand-pill" target="_blank" rel="noopener">
+      <span class="dot"></span> DENTAL AMPLIFY
+    </a>
+  </div>
+  <div class="nav-right">
+    <a href="https://ai4this.com/AIforDentistry" class="nav-link" target="_blank" rel="noopener">AI for Dentistry</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#paywall-overlay" class="nav-cta" id="unlock-nav-btn">Unlock Full Access</a>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-badge">
+    <div class="pulse-dot"></div>
+    AI Chat Agent — Live
+  </div>
+  <h1>Understanding the New<br /><em>NHS Dental Contract</em><br />with AI Chat</h1>
+  <p class="hero-sub">
+    Ask anything about the NHS Dentistry Quality &amp; Payment Reforms — urgent care, UDAs, fissure sealants, complex pathways and more. Get clear, instant answers by chat.
+  </p>
+
+  <div class="timer-row">
+    <div class="timer-badge">
+      <span>⏱</span>
+      <span class="timer-label">Free session remaining:</span>
+      <span class="timer-display timer-ok" id="timer-display">15:00</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Chat Agent Zone ─────────────────────────────────── -->
+<section class="agent-zone" id="agent">
+  <div class="agent-container">
+    <div class="agent-header">
+      <h2>Your NHS Contract Assistant</h2>
+      <p>Type your question below. The agent has read the full guidance document and is ready to explain it in plain English.</p>
+      <p style="margin-top:10px; font-size:0.82rem; color:#C8A84B; font-weight:600;">
+        ⚡ Chat-only · Up to 250 users at once &nbsp;·&nbsp; If you can't connect, we're at full capacity — please try again in a few minutes.
+      </p>
+    </div>
+
+    <div class="widget-wrapper" id="widget-wrapper">
+
+      <elevenlabs-convai agent-id="agent_1001kmxc87jgfedtqg0ybn9myckp"></elevenlabs-convai>
+      <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+    </div>
+
+    <!-- Sample Questions -->
+    <div class="sample-qs">
+      <div class="sample-q"><span class="q-icon">🦷</span>What is the required number of urgent treatments and how is it calculated?</div>
+      <div class="sample-q"><span class="q-icon">📋</span>How does the new UDA crediting system work for l urgent care?</div>
+      <div class="sample-q"><span class="q-icon">💊�/span>Can dental nurses now deliver fluoride varnish independently?</div>
+      <div class="sample-q"><span class="q-icon">🔧</span>What changed with fissure sealant banding under the reforms?</div>
+      <div class="sample-q"><span class="q-icon">📊/span>How does contract reconciliation work under the new system?</div>
+      <div class="sample-q"><span class="q-icon">🏥</span>What are the complex care pathway requirements?</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ────────────────────────────────────── >
+<section class="how-it-works">
+  <div class="section-label">Simple &amp; Instant</div>
+  <h2 class="section-title">How It Works</h2>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h3>Type Freely</h3>
+      <p>Ask your question in plain English — no dental coding, no search terms needed. The agent understands clinical context.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h3>Get a Clear Answer</h3>
+      <p>The AI references the full NHS contractual guidance and responds in plain language — not legalese.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h3>Explore Further</h3>
+      <p>Ask follow-up questions. Go deeper on any section. 15 minutes free, then unlock unlimited access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Topics Covered ──────────────────────────────────── -->
+<section class="topics">
+  <div class="section-label" style="color: var(--gold-light)">Contract Coverage</div>
+  <h2 class="section-title">What You Can Ask About</h2>
+  <div class="topics-grid">
+    <div class="topic-chip"><span class="chip-dot"></span>Urgent Care safety net</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Required Urgent Treatments</div>
+    <div class="topic-chip"><span class="chip-dot"></span>UDA crediting rules</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Contract reconciliation</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Complex care pathways</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Denture modifications</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Fissure sealant re-banding</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Fluoride varnish by nurses</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Quality payment reforms</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Commissioner discretion</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Reporting &amp; claiming</div>
+    <div class="topic-chip"><span class="chip-dot"></span>Contract Management System</div>
+  </div>
+</section>
+
+<!-- ── About ───────────────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-avatar">VN</div>
+    <div class="about-text">
+      <h3>Dr Vivian Nzegbulem</h3>
+      <div class="role">Dental Associate · AI Educator · Founder, Dental Amplify Training</div>
+      <p>
+        I'm a practising dental associate based in Bristol. I built this tool because I know how long it takes to read a 70-page NHS contract — time most of us simply don't have between patients. This chat agent has the whole guidance loaded in, so you don't have to.
+      </p>
+      <p>
+        If you're a dental associate curious about building your own AI tools, come and find me on LinkedIn or explore <strong>Dental Amplify Training</strong> — where I teach you to clone yourself with AI.
+      </p>
+      <a href="https://www.linkedin.com/in/vivian-nzegbulem" target="_blank" rel="noopener" class="linkedin-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Legal / Privacy / Attribution ──────────────────── -->
+<div class="legal-strip">
+  <div class="legal-inner">
+    <div>
+      <h4>Privacy Policy</h4>
+      <p>This tool does not store, record, or retain any conversation data. Chat messages are processed in real time and are not saved to any server or database. No personal data is collected. Your session is private and temporary.</p>
+    </div>
+    <div>
+      <h4>NHS Attribution</h4>
+      <p>The contract information used to train this agent is drawn from publicly available NHS England guidance. Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener">Open Government Licence v3.0</a>. This tool is not affiliated with, endorsed by, or an official product of NHS England.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-brands">
+    <a href="https://ai4this.com" class="footer-brand" target="_blank" rel="noopener">AI4THIS</a>
+    <span style="color:rgba(255,255,255,0.2)">×</span>
+    <a href="https://ai4this.com/DentalAmplify" class="footer-brand" target="_blank" rel="noopener">DENTAL AMPLIFY</a>
+  </div>
+  <div class="footer-copy">© 2026 Dr Vivian Nzegbulem · Built with AI4This</div>
+</footer>
+
+<!-- ── Paywall Overlay ─────────────────────────────────── -->
+<div id="paywall-overlay">
+  <div class="paywall-card">
+    <div class="paywall-icon">🔓</div>
+    <h2>Your free session has ended</h2>
+    <p>You've used your 15-minute free trial. Unlock full unlimited access and keep asking — there's a lot more contract to cover.</p>
+
+    <div class="price-tag">
+      <div class="price-amount">£9.99</div>
+      <div class="price-period">per month · cancel any time</div>
+    </div>
+
+    <ul class="price-bullets">
+      <li>Unlimited chat questions each month</li>
+      <li>Full NHS contract knowledge base</li>
+      <li>Ask follow-up and complex questions</li>
+      <li>Instant access after payment</li>
+    </ul>
+
+    <a href="https://buy.stripe.com/7sYbJ14U4g1R1rL59G8so00" class="pay-btn" target="_blank" rel="noopener">
+      Unlock Now — £9.99
+    </a>
+
+    <div class="stripe-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      Secured by Stripe · No subscription · Cancel-free
+    </div>
+  </div>
+</div>
+
+<!-- ── Timer + Paywall Logic ───────────────────────────── -->
+<script>
+  // 15-minute countdown (900 seconds)
+  const TRIAL_SECONDS = 900;
+  let secondsLeft = TRIAL_SECONDS;
+  let timerInterval = null;
+  let sessionStarted = false;
+
+  const display = document.getElementById('timer-display');
+  const overlay = document.getElementById('paywall-overlay');
+  const unlockBtn = document.getElementById('unlock-nav-btn');
+
+  function formatTime(s) {
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+  }
+
+  function showPaywall() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function startTimer() {
+    if (sessionStarted) return;
+    sessionStarted = true;
+    timerInterval = setInterval(() => {
+      secondsLeft--;
+      display.textContent = formatTime(secondsLeft);
+      if (secondsLeft <= 120) {
+        display.classList.remove('timer-ok');
+        display.classList.add('timer-warning');
+      }
+      if (secondsLeft <= 0) {
+        clearInterval(timerInterval);
+        showPaywall();
+      }
+    }, 1000);
+  }
+
+  // Start timer when user interacts with the widget zone
+  document.getElementById('agent').addEventListener('click', startTimer, { once: true });
+
+  // Manual unlock button
+  unlockBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    showPaywall();
+  });
+
+  // Allow dismissal for testing (remove in production)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      // overlay.classList.remove('active');
+      // document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
