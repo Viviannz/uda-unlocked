@@ -1056,13 +1056,13 @@
 <script>
   // ─── REPLACE THESE TWO VALUES WITH YOUR SUPABASE PROJECT DETAILS ───
   // Find them at: supabase.com → your project → Settings → API
-  const SUPABASE_URL  = 'https://YOUR_PROJECT_ID.supabase.co';
-  const SUPABASE_ANON = 'YOUR_ANON_PUBLIC_KEY';
+  const SUPABASE_URL  = 'https://fvbucwxsfmdhieyzqjdg.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ2YnVjd3hzZm1kaGlleXpxamRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2Mjg1ODQsImV4cCI6MjA5MDIwNDU4NH0.7kJIgrgaWPqu-ouBD3sA29JgIgqT4Wuy92_UsE1JCq0';
   // ────────────────────────────────────────────────────────────────────
 
   const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
-  // Generate or retrieve a persistent session ID for this visitor
+  // Generate or setrieve a persistent session ID for this visitor
   let sessionId = sessionStorage.getItem('uda_session');
   if (!sessionId) {
     sessionId = crypto.randomUUID();
